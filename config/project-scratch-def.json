@@ -1,0 +1,36 @@
+{
+  "orgName": "net zero growth scratch",
+  "edition": "Enterprise",
+  "adminEmail": "YOUREMAILHERE@DOMAIN.COM",
+  "features": [
+    "EnableSetPasswordInApi",
+    "Communities",
+    "Sites",
+    "DevelopmentWave",
+    "ForceComPlatform",
+    "RecordTypes",
+    "SustainabilityApp",
+    "TCRMForSustainability"
+  ],
+  "settings": {
+    "lightningExperienceSettings": {
+      "enableS1DesktopEnabled": true
+    },
+    "mobileSettings": {
+      "enableS1EncryptedStoragePref2": false
+    },
+    "communitiesSettings": {
+      "enableNetworksEnabled": true
+    },
+    "pathAssistantSettings": {
+      "pathAssistantEnabled": true
+    },
+    "securitySettings": {
+      "enableAuditFieldsInactiveOwner": true,
+      "enableAdminLoginAsAnyUser": true,
+      "sessionSettings": {
+        "forceRelogin": false
+      }
+    }
+  }
+}
