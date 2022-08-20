@@ -8,11 +8,11 @@ project:
         default_branch: 'main'
     source_format: sfdx
 
-#orgs:
-   # scratch:
-        #nzc:
-            #config_file: config/project-scratch-def.json
-            #days: 30
+orgs:
+   scratch:
+        nzc:
+            config_file: config/project-scratch-def.json
+            days: 30
 
 tasks:
     robot:
@@ -117,11 +117,11 @@ flows:
             1:
                 task: assign_permission_set_licenses
                 options:
-                    api_names: NetZeroCloudUserPsl, DataProcessingEnginePsl, ManufacturingAdvancedAccountForecastPsl
+                    api_names: NetZeroCloudUserPsl, DataProcessingEnginePsl, ManufacturingAdvancedAccountForecastPsl,TCRMforSustainabilityPsl
             2:
                 task: assign_permission_sets
                 options:
-                    api_names: NetZeroManager, DataProcessingEngineUser, ManufacturingAdvancedAccountForecastPsl
+                    api_names: NetZeroManager, DataProcessingEngineUser, ManufacturingAdvancedAccountForecastPsl,TCRMforSustainabilityAdmin,TCRMforSustainabilityUser
             3: # turning on Net Zero Setup toggles
                 task: dx
                 options:
@@ -147,3 +147,8 @@ flows:
                 task: load_vehicles
             11: #data loading 
                 task: load_waste
+            12: 
+                task: dx
+                options:
+                    command: force:source:deploy
+                    extra: -m "WaveApplication, WaveDataflow,WaveDataset,WaveXmd"
