@@ -151,4 +151,4 @@ flows:
                 task: dx
                 options:
                     command: force:source:deploy
-                    extra: -m "WaveApplication, WaveDataflow,WaveDataset,WaveXmd"
+                    extra: -m "WaveApplication,WaveDataset,WaveXmd,WaveDataFlow:Net_Zero_Analytics_Net_Zero_Analytics, WaveRecipe:Net_Zero_Analytics_Net_Zero_Analytics"
