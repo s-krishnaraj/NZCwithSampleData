@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dataset>CarbonFootprint1</dataset>
+    <dimensions>
+        <field>EmissionSource.Name</field>
+        <isDerived>false</isDerived>
+        <label>Asset</label>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>EmissionSource.RecordType</field>
+        <isDerived>false</isDerived>
+        <label>Asset Type</label>
+        <sortIndex>1</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>EmissionSourceId_Derived</field>
+        <isDerived>false</isDerived>
+        <label>Emission Sources</label>
+        <sortIndex>2</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>EmissionSource.Is_Country_US</field>
+        <isDerived>false</isDerived>
+        <label>Emissions From</label>
+        <members>
+            <label>Emissions from US Buildings</label>
+            <member>Yes</member>
+            <sortIndex>0</sortIndex>
+        </members>
+        <members>
+            <label>Emissions from Non-US Buildings</label>
+            <member>No</member>
+            <sortIndex>1</sortIndex>
+        </members>
+        <sortIndex>3</sortIndex>
+    </dimensions>
+    <measures>
+        <field>CarbonInventoryRecordCount</field>
+        <isDerived>false</isDerived>
+        <label>Carbon Inventory Records</label>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Emissions</field>
+        <isDerived>true</isDerived>
+        <label>Total Emissions</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>MaxVarianceAboveAvgElectrCnsmp</field>
+        <isDerived>false</isDerived>
+        <label>Maximum Variance Above Average Electricity Consumption</label>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Assets</field>
+        <isDerived>true</isDerived>
+        <label>Total Assets</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Emissions_w_LB</field>
+        <isDerived>false</isDerived>
+        <label>Total Emissions (tCO2e)</label>
+        <sortIndex>2</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope1_Emissions</field>
+        <isDerived>true</isDerived>
+        <label>Scope 1 Emissions (tCO2e)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>2</sortIndex>
+    </measures>
+    <measures>
+        <field>EnrgyCnsmpIntensityInKbtuSqft</field>
+        <isDerived>false</isDerived>
+        <label>Energy Consumption Intensity (kBtu/sq ft)</label>
+        <sortIndex>3</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope1_Scope2_LB</field>
+        <isDerived>true</isDerived>
+        <label>Scope 1 and Scope 2 Location-Based Emissions (tCO2e)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>3</sortIndex>
+    </measures>
+    <measures>
+        <field>EnrgyCnsmpIntensityInKwhSqft</field>
+        <isDerived>false</isDerived>
+        <label>Energy Consumption Intensity (kWh/sq ft)</label>
+        <sortIndex>4</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope1_Scope2_MB</field>
+        <isDerived>true</isDerived>
+        <label>Scope 1 and Scope 2 Market-Based Emissions (tCO2e)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>4</sortIndex>
+    </measures>
+    <measures>
+        <field>PrevYrEnrgyIntensityKbtuSqft</field>
+        <isDerived>false</isDerived>
+        <label>Previous Year Energy Consumption Intensity (kBtu/sq ft)</label>
+        <sortIndex>5</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Energy_Consumption_Stationary_Asset</field>
+        <isDerived>true</isDerived>
+        <label>Total Energy Consumption of Stationary Assets</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>5</sortIndex>
+    </measures>
+    <measures>
+        <field>RgnlElectrCnsmpIntensity</field>
+        <isDerived>false</isDerived>
+        <label>Regional Electricity Consumption Intensity (kWh/sq ft)</label>
+        <sortIndex>6</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Fuel_Consumption_Vehicle_Asset</field>
+        <isDerived>true</isDerived>
+        <label>Total Fuel Consumption of Vehicles</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>6</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Allocation_Renewable_Energy</field>
+        <isDerived>true</isDerived>
+        <label>Total Allocation Renewable Energy</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>7</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Renewable_Energy</field>
+        <isDerived>true</isDerived>
+        <label>Total Renewable Energy</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>8</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope2_Location_Based</field>
+        <isDerived>true</isDerived>
+        <label>Scope 2 Location-Based Emissions</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>9</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope2_Market_Based</field>
+        <isDerived>true</isDerived>
+        <label>Scope 2 Market-Based Emissions</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>10</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope3</field>
+        <isDerived>true</isDerived>
+        <label>Scope 3</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>11</sortIndex>
+    </measures>
+    <measures>
+        <field>Sum_CarbonInventoryRecordCount</field>
+        <isDerived>true</isDerived>
+        <label>Sum CarbonInventoryRecordCount</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>12</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_fuel_consum_lit_comp_yr</field>
+        <isDerived>true</isDerived>
+        <label>Total Fuel Consumption in 2020 (Litres)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>13</sortIndex>
+    </measures>
+    <measures>
+        <field>total_fuel_consum_in_lit_rep_year</field>
+        <isDerived>true</isDerived>
+        <label>Total Fuel Consumption in 2021 (Litres)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>14</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_fuel_consum_in_gallons_comp_year</field>
+        <isDerived>true</isDerived>
+        <label>Total Fuel Consumption in 2020 (Gallons)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>15</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_fuel_consum_gallons_rep_year</field>
+        <isDerived>true</isDerived>
+        <label>Total Fuel Consumption in 2021 (Gallons)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>16</sortIndex>
+    </measures>
+    <measures>
+        <field>Annual_Change_Energy</field>
+        <isDerived>true</isDerived>
+        <label>Annual Energy Usage Intensity Variance</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>17</sortIndex>
+    </measures>
+    <measures>
+        <field>Electricity_Intensity_Variance</field>
+        <formatCustomFormat>[&quot;####%&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Electricity Usage Intensity and Variance</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>18</sortIndex>
+    </measures>
+    <measures>
+        <field>Renewable_Energy_Usage_Percent</field>
+        <isDerived>true</isDerived>
+        <label>Renewable Energy Usage</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>19</sortIndex>
+    </measures>
+    <measures>
+        <field>Allocated_Renewable_Energy_KWh</field>
+        <isDerived>true</isDerived>
+        <label>Allocated Renewable Energy (KWh)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>20</sortIndex>
+    </measures>
+    <measures>
+        <field>renewable_energy_of_totalelectricity</field>
+        <formatCustomFormat>[&quot;#,###.##%&quot;,100]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Renewable Energy</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>21</sortIndex>
+    </measures>
+    <measures>
+        <field>Energy_Intensity_Variance</field>
+        <formatCustomFormat>[&quot;###%&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Energy Usage Intensity and Variance</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>22</sortIndex>
+    </measures>
+    <measures>
+        <field>Electrcity_Emissions_tCo2e</field>
+        <isDerived>true</isDerived>
+        <label>Electrcity Emissions (tCo2e)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>23</sortIndex>
+    </measures>
+    <measures>
+        <field>Energy_Emissions_tCo2e</field>
+        <isDerived>true</isDerived>
+        <label>Energy Emissions (tCo2e)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>24</sortIndex>
+    </measures>
+    <measures>
+        <field>Avg_DataCenter_Pue_Report_Year</field>
+        <isDerived>true</isDerived>
+        <label>Average Data Center PUE in 2021</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>25</sortIndex>
+    </measures>
+    <measures>
+        <field>Avg_DataCenter_Pue_ComparativeYear</field>
+        <isDerived>true</isDerived>
+        <label>Average Data Center PUE in 2020</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>26</sortIndex>
+    </measures>
+    <measures>
+        <field>Energy_Consumption_M2</field>
+        <isDerived>true</isDerived>
+        <label>Energy Usage (KBtu/m2)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>27</sortIndex>
+    </measures>
+    <measures>
+        <field>Energy_Consumption_Sqft</field>
+        <isDerived>true</isDerived>
+        <label>Energy Usage (KBtu/sq ft)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>28</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Energy_ConsumptionInKwh</field>
+        <isDerived>true</isDerived>
+        <label>Total Electricity Consumption (kWh)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>29</sortIndex>
+    </measures>
+    <measures>
+        <field>Emission_Consumption_Intensity_ComparitiveDuration</field>
+        <isDerived>true</isDerived>
+        <label>Energy Intensity in Comparison Duration</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>30</sortIndex>
+    </measures>
+    <measures>
+        <field>Emission_Consumption_Intensity_SelectedDuration</field>
+        <isDerived>true</isDerived>
+        <label>Energy Intensity in Selected Duration</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>31</sortIndex>
+    </measures>
+    <measures>
+        <field>Energy_Consumption_Percentage</field>
+        <formatCustomFormat>[&quot;▲#,###.##%;▼-#,###.##%;0%&quot;,100]</formatCustomFormat>
+        <formatDecimalSeparator>.</formatDecimalSeparator>
+        <formatThousandsSeparator>,</formatThousandsSeparator>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>32</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Carbon_Emission_Percentage</field>
+        <formatCustomFormat>[&quot;▲#,###.##%;▼-#,###.##%;0%&quot;,100]</formatCustomFormat>
+        <formatDecimalSeparator>.</formatDecimalSeparator>
+        <formatThousandsSeparator>,</formatThousandsSeparator>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>33</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Energy_Intensity_Distribution</field>
+        <isDerived>true</isDerived>
+        <label>Total Energy Intensity Distribution(kWh/sq ft)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>34</sortIndex>
+    </measures>
+    <measures>
+        <field>Energy_Consumption_Intensity</field>
+        <isDerived>true</isDerived>
+        <label>Energy Consumption Intensity (kWh/sq ft)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>35</sortIndex>
+    </measures>
+</WaveXmd>

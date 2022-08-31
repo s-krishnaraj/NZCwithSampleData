@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dataset>EmissionsForecast1</dataset>
+    <dimensions>
+        <field>EmissionsActivity.Name</field>
+        <isDerived>false</isDerived>
+        <label>Emission</label>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <measures>
+        <field>TotalFloorArea</field>
+        <isDerived>false</isDerived>
+        <label>Total Floor Area (sqft)</label>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>StatisticalForecast</field>
+        <isDerived>true</isDerived>
+        <label>Statistical Forecast</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>TargetEmissions</field>
+        <isDerived>false</isDerived>
+        <label>Target Emissions (tCO2e)</label>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <measures>
+        <field>TargetCompensatedEmissions</field>
+        <isDerived>false</isDerived>
+        <label>Target Compensated Emissions (tCO2e)</label>
+        <sortIndex>2</sortIndex>
+    </measures>
+    <measures>
+        <field>TargetRenewableEnergyPct</field>
+        <isDerived>false</isDerived>
+        <label>Target Renewable Energy Percentage</label>
+        <sortIndex>3</sortIndex>
+    </measures>
+    <measures>
+        <field>ActualEmissions</field>
+        <isDerived>false</isDerived>
+        <label>Actual Emissions (tCO2e)</label>
+        <sortIndex>4</sortIndex>
+    </measures>
+    <measures>
+        <field>ActualRenewableEnergyCnsmpPct</field>
+        <isDerived>false</isDerived>
+        <label>Actual Renewable Energy Consumption Percentage</label>
+        <sortIndex>5</sortIndex>
+    </measures>
+    <measures>
+        <field>ActualEmissionsIntensity</field>
+        <isDerived>false</isDerived>
+        <label>Actual Emissions Intensity</label>
+        <sortIndex>6</sortIndex>
+    </measures>
+    <measures>
+        <field>ForcstRenewableEnergyCnsmpPct</field>
+        <isDerived>false</isDerived>
+        <label>Forecasted Renewable Energy Consumption Percentage</label>
+        <sortIndex>7</sortIndex>
+    </measures>
+    <measures>
+        <field>ForecastedEnergyConsumption</field>
+        <isDerived>false</isDerived>
+        <label>Forecasted Energy Consumption (kWh)</label>
+        <sortIndex>8</sortIndex>
+    </measures>
+    <measures>
+        <field>ForecastedMarketBasedEmssn</field>
+        <isDerived>false</isDerived>
+        <label>Forecasted Market-Based Emissions (tCO2e)</label>
+        <sortIndex>9</sortIndex>
+    </measures>
+    <measures>
+        <field>ForecastedLocationBasedEmssn</field>
+        <isDerived>false</isDerived>
+        <label>Forecasted Location-Based Emissions (tCO2e)</label>
+        <sortIndex>10</sortIndex>
+    </measures>
+    <measures>
+        <field>ForcstEmssnIntensityRdctnPct</field>
+        <isDerived>false</isDerived>
+        <label>Forecasted Emissions Intensity Reduction Percentage</label>
+        <sortIndex>11</sortIndex>
+    </measures>
+    <measures>
+        <field>ForecastedEmissions</field>
+        <isDerived>false</isDerived>
+        <label>Forecasted Emissions (tCO2e)</label>
+        <sortIndex>12</sortIndex>
+    </measures>
+    <measures>
+        <field>PlnOperationalEmissionsRdctn</field>
+        <isDerived>false</isDerived>
+        <label>Planned Operational Emissions Reduction (tCO2e)</label>
+        <sortIndex>13</sortIndex>
+    </measures>
+    <measures>
+        <field>PlnSupplierEmissionsRdctn</field>
+        <isDerived>false</isDerived>
+        <label>Planned Supplier Emissions Reduction (tCO2e)</label>
+        <sortIndex>14</sortIndex>
+    </measures>
+    <measures>
+        <field>FinalForecastedEmissions</field>
+        <isDerived>false</isDerived>
+        <label>Final Forecasted Emissions (tCO2e)</label>
+        <sortIndex>15</sortIndex>
+    </measures>
+    <measures>
+        <field>RequiredCarbonCredits</field>
+        <isDerived>false</isDerived>
+        <label>Required Carbon Credits (tCO2e)</label>
+        <sortIndex>16</sortIndex>
+    </measures>
+    <measures>
+        <field>PlannedCarbonCredits</field>
+        <isDerived>false</isDerived>
+        <label>Planned Carbon Credits (tCO2e)</label>
+        <sortIndex>17</sortIndex>
+    </measures>
+    <measures>
+        <field>NetEmissionsForecast</field>
+        <isDerived>false</isDerived>
+        <label>Net Emissions Forecast (tCO2e)</label>
+        <sortIndex>18</sortIndex>
+    </measures>
+</WaveXmd>

@@ -1,0 +1,40 @@
+<template>
+    <lightning-card footer="" title="">
+        <div class="slds-grid slds-gutters">
+            <div class="slds-col slds-size_2-of-3">
+                <div class="slds-box" >
+                    <h1 class="slds-text-heading_medium">{welcome_text}</h1>
+                </div>
+            </div>
+            <div class="slds-col slds-size_1-of-3">
+                <div class="slds-box slds-theme_warning">
+                    <p>The features available in this org are as per the <strong>Net Zero Growth</strong> SKU
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="c-container">
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small"> 
+
+                    <template if:true={landingItems.data}>
+                        <template for:each={landingItems.data} for:item="landingItem">
+                            <c-in-app-landing-child 
+                                key={landingItem.Id}
+                                heading= {landingItem.Section_Heading__c} 
+                                icon-name={landingItem.Icon_Name__c}
+                                cloud-detail={landingItem.Section_Detail__c}
+                                app={landingItem.Target_App__c}
+                                page={landingItem.Target_Tab_Name__c}
+                                link-in-new-tab={pass_false}
+                                link-reference={landingItem.NavigationType__c}>
+                            </c-in-app-landing-child>
+                        </template>
+                    </template>
+                       
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

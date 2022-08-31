@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PageName__c</fullName>
+    <externalId>false</externalId>
+    <label>Page Name</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>LandingPage</fullName>
+                <default>true</default>
+                <label>LandingPage</label>
+            </value>
+            <value>
+                <fullName>Setup</fullName>
+                <default>false</default>
+                <label>Setup</label>
+            </value>
+            <value>
+                <fullName>Target Setting</fullName>
+                <default>false</default>
+                <label>Target Setting</label>
+            </value>
+            <value>
+                <fullName>Carbon Accounting</fullName>
+                <default>false</default>
+                <label>Carbon Accounting</label>
+            </value>
+            <value>
+                <fullName>Supplier Management</fullName>
+                <default>false</default>
+                <label>Supplier Management</label>
+            </value>
+            <value>
+                <fullName>Waste Management</fullName>
+                <default>false</default>
+                <label>Waste Management</label>
+            </value>
+            <value>
+                <fullName>Net Zero Analytics</fullName>
+                <default>false</default>
+                <label>Net Zero Analytics</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

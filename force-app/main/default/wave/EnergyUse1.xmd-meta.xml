@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dataset>EnergyUse1</dataset>
+    <dimensions>
+        <field>EmissionSource.Name</field>
+        <isDerived>false</isDerived>
+        <label>Asset Name</label>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Scope</field>
+        <isDerived>true</isDerived>
+        <members>
+            <label>Scope 1 Emissions</label>
+            <member>Scope 1 Emissions (tCO2e)</member>
+            <sortIndex>0</sortIndex>
+        </members>
+        <members>
+            <label>Scope 2 Location-Based Emissions</label>
+            <member>Scope 2 Location Based Emissions (tCO2e)</member>
+            <sortIndex>1</sortIndex>
+        </members>
+        <members>
+            <label>Scope 3 Emissions</label>
+            <member>Scope 3 Emissions (tCO2e)</member>
+            <sortIndex>2</sortIndex>
+        </members>
+        <members>
+            <label>Scope 2 Market-Based Emissions</label>
+            <member>Scope 2 Market Based Emissions (tCO2e)</member>
+            <sortIndex>3</sortIndex>
+        </members>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>Supplier.Name</field>
+        <isDerived>false</isDerived>
+        <label>Supplier</label>
+        <sortIndex>1</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>EURecordType.Name</field>
+        <isDerived>false</isDerived>
+        <label>EU Record Type Name</label>
+        <sortIndex>2</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>EU_ParentGroup</field>
+        <isDerived>false</isDerived>
+        <label>Emission Source</label>
+        <sortIndex>3</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>EmissionSource.CountryCode.Country_Code_3_digit</field>
+        <isDerived>false</isDerived>
+        <label>Country</label>
+        <sortIndex>4</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>EmissionSource.StationaryAssetType</field>
+        <isDerived>false</isDerived>
+        <label>Asset Type</label>
+        <sortIndex>5</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>EU_RecordType</field>
+        <isDerived>false</isDerived>
+        <label>Travel Type</label>
+        <sortIndex>6</sortIndex>
+    </dimensions>
+    <measures>
+        <field>Total_Emissions_w_LB</field>
+        <isDerived>false</isDerived>
+        <label>Total Emissions</label>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>electric_consumption</field>
+        <isDerived>true</isDerived>
+        <label>Electricity Consumption (kWh)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Emissions_Business_Travel</field>
+        <isDerived>false</isDerived>
+        <label>Total Emissions (tCO2e)</label>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <measures>
+        <field>renewable_energy</field>
+        <isDerived>true</isDerived>
+        <label>Renewable Energy (kWh)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <measures>
+        <field>TotalRenewableEnergyInKwh</field>
+        <isDerived>false</isDerived>
+        <label>Total Renewable Energy Consumption (kWh)</label>
+        <sortIndex>2</sortIndex>
+    </measures>
+    <measures>
+        <field>total_electricity_emission</field>
+        <isDerived>true</isDerived>
+        <label>Emissions from Electricity Consumption (tCO2e)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>2</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope3EmissionsInTco2e_Derived</field>
+        <isDerived>false</isDerived>
+        <label>Scope 3 Emissions (tCO2e)</label>
+        <sortIndex>3</sortIndex>
+    </measures>
+    <measures>
+        <field>total_electricity_consumption</field>
+        <isDerived>true</isDerived>
+        <label>Electricity Consumption</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>3</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope1EmissionsInTco2e</field>
+        <isDerived>false</isDerived>
+        <label>Scope 1 Emissions</label>
+        <sortIndex>4</sortIndex>
+    </measures>
+    <measures>
+        <field>electric_carbon_intensity</field>
+        <isDerived>true</isDerived>
+        <label>Carbon Intensity of Electricity (tCO2e/MWh)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>4</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope3EmissionsInTco2e</field>
+        <isDerived>false</isDerived>
+        <label>Scope 3 Emissions</label>
+        <sortIndex>5</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope_2_LB_Percentage</field>
+        <formatCustomFormat>[&quot;▲#,###.##%;▼-#,###.##%;0%&quot;,100]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>5</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Emissions_w_MB</field>
+        <isDerived>false</isDerived>
+        <label>Total Emissions</label>
+        <sortIndex>6</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope_2_MB_Percentage</field>
+        <formatCustomFormat>[&quot;▲#,###.##%;▼-#,###.##%;0%&quot;,100]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>6</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope_3_Percentage</field>
+        <formatCustomFormat>[&quot;▲#,###.##%;▼-#,###.##%;0%&quot;,100]</formatCustomFormat>
+        <formatDecimalSeparator>.</formatDecimalSeparator>
+        <formatThousandsSeparator>,</formatThousandsSeparator>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>7</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope_1_Percentage</field>
+        <formatCustomFormat>[&quot;▲#,###.##%;▼-#,###.##%;0%&quot;,100]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>8</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Emissions_Percentage</field>
+        <formatCustomFormat>[&quot;▲#,###.##%;▼-#,###.##%;0%&quot;,100]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>9</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope_2_LB_Emissions</field>
+        <isDerived>true</isDerived>
+        <label>Scope 2 Location-Based Emissions</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>10</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope_2_MB_Emissions</field>
+        <isDerived>true</isDerived>
+        <label>Scope 2 Market-Based Emissions</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>11</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope_1_Emissions</field>
+        <isDerived>true</isDerived>
+        <label>Scope 1 Emissions</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>12</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope_3_Emissions</field>
+        <isDerived>true</isDerived>
+        <label>Scope 3 Emissions</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>13</sortIndex>
+    </measures>
+    <measures>
+        <field>renewable_energy_ex_hydro</field>
+        <isDerived>true</isDerived>
+        <label>Renewable Energy Excluding Hydroelectric (kWh)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>14</sortIndex>
+    </measures>
+    <measures>
+        <field>TotalNonElectricityFuelConsumption</field>
+        <isDerived>true</isDerived>
+        <label>Total Non-Electric Fuel Consumption (kWh)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>15</sortIndex>
+    </measures>
+    <measures>
+        <field>TotalElectricityConsumption</field>
+        <isDerived>true</isDerived>
+        <label>Total Electricity Consumption (kWh)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>16</sortIndex>
+    </measures>
+    <measures>
+        <field>Electricity</field>
+        <isDerived>true</isDerived>
+        <label>Electricity Consumption (kWh)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>17</sortIndex>
+    </measures>
+    <measures>
+        <field>Energy</field>
+        <isDerived>true</isDerived>
+        <label>Energy Consumption (kWh)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>18</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Emission_w_LB</field>
+        <isDerived>true</isDerived>
+        <label>Total Emission LB</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>19</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Emission_w_MB</field>
+        <isDerived>true</isDerived>
+        <label>Total Emission MB</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>20</sortIndex>
+    </measures>
+    <measures>
+        <field>Scope_Emissions</field>
+        <isDerived>true</isDerived>
+        <label>Emissions(tCO2e)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>21</sortIndex>
+    </measures>
+</WaveXmd>

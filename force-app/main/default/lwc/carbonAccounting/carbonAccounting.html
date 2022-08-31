@@ -1,0 +1,35 @@
+<template>
+    <lightning-card footer="" title="">
+        <h1 class="slds-text-heading_medium">{app_welcome_text}</h1> 
+       
+        <div class="c-footer" >
+            <a href="/lightning/n/Home">Return to Learning Home</a>
+        </div>
+        
+        <div class="c-container"> 
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <p class="c-description">{app_description}</p>
+ 
+                    <template if:true={carbonAccountingItems.data}>
+                        <template for:each={carbonAccountingItems.data} for:item="caItem">
+                            <c-feature-child
+                                key={caItem.Id}
+                                heading={caItem.Section_Heading__c} 
+                                image={caItem.Icon_Name__c}
+                                app-text={caItem.Section_Detail__c}
+                                app={caItem.Target_App__c}
+                                page={caItem.Target_Tab_Name__c}
+                                link-in-new-tab={pass_false}
+                                link-reference={caItem.NavigationType__c}
+                                object-name={caItem.ObjectName__c}
+                                object-id={caItem.Target_RecordId__c}
+                                >
+                            </c-feature-child>
+                        </template>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
