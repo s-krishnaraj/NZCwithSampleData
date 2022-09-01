@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <assetIcon>/analytics/wave/web/proto/images/app/icons/16.png</assetIcon>
+    <folder>NZC_2_0</folder>
+    <masterLabel>NZC 2.0</masterLabel>
+    <templateOrigin>sfdc_internal__Net_Zero_Analytics</templateOrigin>
+    <templateVersion>2.0</templateVersion>
+</WaveApplication>

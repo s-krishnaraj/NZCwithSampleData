@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dataset>StationaryAssetWaterActivity</dataset>
+    <dimensions>
+        <field>SAES.Name</field>
+        <isDerived>false</isDerived>
+        <label>Stationary Asset Name</label>
+        <linkTemplateEnabled>true</linkTemplateEnabled>
+        <recordIdField>StnryAssetEnvrSrcId</recordIdField>
+        <salesforceActionsEnabled>true</salesforceActionsEnabled>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <measures>
+        <field>TotalCost</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>false</isDerived>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>Water_consumption</field>
+        <isDerived>true</isDerived>
+        <label>Water Consumption (m3)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>EnvironmentalRisk.BaselineStress_Number</field>
+        <isDerived>false</isDerived>
+        <label>Water Stress</label>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <measures>
+        <field>Water_withdrawal</field>
+        <isDerived>true</isDerived>
+        <label>Water Withdrawal (m3)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <measures>
+        <field>Water_discharge</field>
+        <isDerived>true</isDerived>
+        <label>Water Discharge (m3)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>2</sortIndex>
+    </measures>
+    <measures>
+        <field>Based_on_Units_Manufactured</field>
+        <isDerived>true</isDerived>
+        <label>By Units Manufactured</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>3</sortIndex>
+    </measures>
+    <measures>
+        <field>Based_on_Employee_Count</field>
+        <isDerived>true</isDerived>
+        <label>By Employee Count</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>4</sortIndex>
+    </measures>
+    <measures>
+        <field>Based_on_Floor_Area</field>
+        <isDerived>true</isDerived>
+        <label>By Floor Area</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>5</sortIndex>
+    </measures>
+    <measures>
+        <field>avg_EnvironmentalRisk.OverallRisk_Number</field>
+        <isDerived>true</isDerived>
+        <label>Average Water Risk</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>6</sortIndex>
+    </measures>
+    <measures>
+        <field>sum_QuantityInM3</field>
+        <isDerived>true</isDerived>
+        <label>Quantity (m3)</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>7</sortIndex>
+    </measures>
+</WaveXmd>

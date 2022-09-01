@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dataset>SustainabilityCredit</dataset>
+    <dimensions>
+        <field>CarbonCreditProject.ProjectType</field>
+        <isDerived>false</isDerived>
+        <label>Project Type</label>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>CarbonCreditProject.MitigationType</field>
+        <isDerived>false</isDerived>
+        <label>Mitigation Type</label>
+        <sortIndex>1</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>CarbonCreditProject.AdditionalBenefits</field>
+        <isDerived>false</isDerived>
+        <label>Additional Benefits</label>
+        <sortIndex>2</sortIndex>
+    </dimensions>
+    <dimensions>
+        <field>CarbonCreditProject.Name</field>
+        <isDerived>false</isDerived>
+        <linkTemplateEnabled>true</linkTemplateEnabled>
+        <recordIdField>CarbonCreditProject.Id</recordIdField>
+        <salesforceActionsEnabled>true</salesforceActionsEnabled>
+        <sortIndex>3</sortIndex>
+    </dimensions>
+    <measures>
+        <field>CreditsAllocationCost</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>false</isDerived>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>Credits_Purchased</field>
+        <isDerived>true</isDerived>
+        <label>Credits Purchased</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>TotalCost</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>false</isDerived>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Credits_Allocated</field>
+        <isDerived>true</isDerived>
+        <label>Credits Allocated</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>1</sortIndex>
+    </measures>
+    <measures>
+        <field>CostPerUnit</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>false</isDerived>
+        <sortIndex>2</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Emissions</field>
+        <isDerived>true</isDerived>
+        <label>Emissions</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>2</sortIndex>
+    </measures>
+    <measures>
+        <field>sum_CreditsPurchased</field>
+        <isDerived>true</isDerived>
+        <label>Credits Purchased</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>3</sortIndex>
+    </measures>
+    <measures>
+        <field>sum_CreditsAvailable</field>
+        <isDerived>true</isDerived>
+        <label>Available Credits</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>4</sortIndex>
+    </measures>
+    <measures>
+        <field>avg_CostPerUnit</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Avg Cost per Unit</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>5</sortIndex>
+    </measures>
+    <measures>
+        <field>Total_Cost</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Cost of Carbon Credits</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>6</sortIndex>
+    </measures>
+    <measures>
+        <field>Credits_Allocated</field>
+        <formatCustomFormat>[&quot;$#,###&quot;,1]</formatCustomFormat>
+        <isDerived>true</isDerived>
+        <label>Cost of Allocated Credits</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>7</sortIndex>
+    </measures>
+    <measures>
+        <field>CarryForwarded</field>
+        <isDerived>true</isDerived>
+        <label>Credits Carry Forwarded</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>8</sortIndex>
+    </measures>
+</WaveXmd>

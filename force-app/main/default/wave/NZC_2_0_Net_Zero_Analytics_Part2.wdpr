@@ -1,0 +1,998 @@
+{
+  "version" : "56.0",
+  "nodes" : {
+    "LOAD_DATASET0" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Status", "Name", "SupplierId", "OwnerId", "PurchaseDate", "CrbnCreditProjectId", "Id", "SustainabilityPurchaseId", "CostPerUnit", "CreditsAvailable", "TotalCost", "CreditsAllocated", "CreditsPurchased" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "SustainabilityCredit",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "SustainabilityCredit"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET1" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Name", "Id", "AnnualEmssnInventoryId", "Scp3CrbnCrAllocInTco2e", "NetScope1EmssnInTco2e", "NetScope3EmssnInTco2e", "NetScope2EmssnInTco2e", "TotalScope3EmssnInTco2e", "TotalScope2EmssnInTco2e", "TotalEmssnInTco2e", "NetEmissionsInTco2e", "Scp1CrbnCrAllocInTco2e", "TotalScope1EmssnInTco2e", "Year", "AllocatedCarbonCrCost", "Scp2CrbnCrAllocInTco2e", "TotalCrbnCrAllocInTco2e", "OwnerId" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "CrbnCreditAlloc",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "CrbnCreditAlloc"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET2" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "EmissionsActivityId", "CrbnCreditAllocId", "Id", "Name", "NetEmssnInTco2e", "TotalEmssnInTco2e", "TotalCrbnCrAllocInTco2e" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "CrbnCreditAllocItem",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "CrbnCreditAllocItem"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET3" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "CrbnCrAllocDate", "EmissionsActivityId", "SustainabilityCreditId", "CrbnCreditAllocId", "Id", "Name", "TotalCrbnCrAllocCost", "TotalCrbnCrAllocInTco2e", "OwnerId" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "CrbnCreditDistribution",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "CrbnCreditDistribution"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET4" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Type", "Id", "Name" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "SustainabilityPurchase",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "SustainabilityPurchase"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET5" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Description", "MitigationType", "Name", "AdditionalBenefits", "ProjectType", "CreatedDate", "Country", "Region", "Id", "TotalSpend", "TotalCrbnCrPurchInTco2e" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "CrbnCreditProject",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "CrbnCreditProject"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET6" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name", "EmissionsScopeCategory" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "EmissionsActivity",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "EmissionsActivity"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "LOAD_DATASET7" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Id", "Name" ],
+        "dataset" : {
+          "type" : "connectedDataset",
+          "label" : "Supplier",
+          "connectionName" : "SFDC_LOCAL",
+          "sourceObjectName" : "Supplier"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "FORMULA0" : {
+      "action" : "formula",
+      "sources" : [ "LOAD_DATASET6" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "TEXT",
+          "name" : "EmissionActivityCategory",
+          "label" : "Emissions Activity Category",
+          "formulaExpression" : "case when contains(Name, 'Commercial Building') then 'Commercial Building' \nwhen contains(Name, 'Data Center') then 'Data Center' \nwhen contains(Name, 'Fleet Vehicles') then 'Fleet Vehicles' \nwhen contains(Name, 'Private Jet') then 'Private Jet' else Name end",
+          "precision" : 255,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "BUCKET0" : {
+      "action" : "bucket",
+      "sources" : [ "FORMULA0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "EmissionsScopeCategory_wo_All",
+          "label" : "Emissions Scope Category wo All",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "isPassthroughEnabled" : true,
+            "sourceField" : {
+              "name" : "EmissionsScopeCategory",
+              "type" : "TEXT"
+            },
+            "buckets" : [ {
+              "value" : "ESCategory_S1S2S3",
+              "sourceValues" : [ "Scope 1", "Scope 2", "Scope 3" ]
+            } ]
+          }
+        } ]
+      }
+    },
+    "BUCKET1" : {
+      "action" : "bucket",
+      "sources" : [ "BUCKET0" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "IsAllEmissions",
+          "label" : "Is All Emissions?",
+          "type" : "TEXT",
+          "bucketsSetup" : {
+            "defaultBucketValue" : "No",
+            "isPassthroughEnabled" : false,
+            "sourceField" : {
+              "name" : "Name",
+              "type" : "TEXT"
+            },
+            "buckets" : [ {
+              "value" : "Yes",
+              "sourceValues" : [ "All Emissions" ]
+            } ]
+          }
+        } ]
+      }
+    },
+    "JOIN0" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET2", "JOIN9" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "CCA.AnnualEmssnInventoryId", "CCA.Scp3CrbnCrAllocInTco2e", "CCA.NetScope1EmssnInTco2e", "CCA.NetScope3EmssnInTco2e", "CCA.NetScope2EmssnInTco2e", "CCA.TotalScope3EmssnInTco2e", "CCA.TotalScope2EmssnInTco2e", "CCA.TotalEmssnInTco2e", "CCA.NetEmissionsInTco2e", "CCA.Scp1CrbnCrAllocInTco2e", "CCA.TotalScope1EmssnInTco2e", "CCA.Scp2CrbnCrAllocInTco2e", "CCA.TotalCrbnCrAllocInTco2e" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "CrbnCreditAllocId" ],
+        "rightQualifier" : "CCA",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN1" : {
+      "action" : "join",
+      "sources" : [ "JOIN0", "AGGREGATE1" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "CrbnCreditAllocId", "EmissionsActivityId" ],
+        "rightQualifier" : "CarbonCreditDistribution",
+        "rightKeys" : [ "CrbnCreditAllocId", "EmissionsActivityId" ]
+      }
+    },
+    "JOIN2" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET0", "FORMULA2" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "CarbonCreditProject.Description", "CarbonCreditProject.TotalSpend", "CarbonCreditProject.TotalCrbnCrPurchInTco2e" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "CrbnCreditProjectId" ],
+        "rightQualifier" : "CarbonCreditProject",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN3" : {
+      "action" : "join",
+      "sources" : [ "JOIN2", "LOAD_DATASET4" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "SustainabilityPurchase.Id" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "SustainabilityPurchaseId" ],
+        "rightQualifier" : "SustainabilityPurchase",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN4" : {
+      "action" : "join",
+      "sources" : [ "JOIN1", "BUCKET1" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "EmissionsActivityId" ],
+        "rightQualifier" : "EmissionsActivity",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN5" : {
+      "action" : "join",
+      "sources" : [ "JOIN3", "LOAD_DATASET7" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "SupplierId" ],
+        "rightQualifier" : "Supplier",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "OUTPUT0" : {
+      "action" : "save",
+      "sources" : [ "JOIN10" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Sustainability Credit",
+          "name" : "SustainabilityCredit",
+          "folderName" : "NZC_2_0",
+          "rowLevelSecurityFilter" : "'Owner.UserRole.Roles' == \"$User.UserRoleId\" || 'OwnerId' == \"$User.Id\""
+        }
+      }
+    },
+    "OUTPUT1" : {
+      "action" : "save",
+      "sources" : [ "JOIN4" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Carbon Credit Allocation Item",
+          "name" : "CarbonCreditAllocationItem",
+          "folderName" : "NZC_2_0",
+          "rowLevelSecurityFilter" : "'CCA.Owner.UserRole.Roles' == \"$User.UserRoleId\" || 'CCA.OwnerId' == \"$User.Id\""
+        }
+      }
+    },
+    "TO_DIMENSION0" : {
+      "action" : "typeCast",
+      "sources" : [ "LOAD_DATASET1" ],
+      "parameters" : {
+        "fields" : [ {
+          "name" : "Year",
+          "newProperties" : {
+            "label" : "Year Dimension",
+            "name" : "Year_Dim",
+            "typeProperties" : {
+              "type" : "TEXT",
+              "length" : 255
+            }
+          }
+        } ]
+      }
+    },
+    "FORMULA1" : {
+      "action" : "formula",
+      "sources" : [ "TO_DIMENSION0" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "DATE_ONLY",
+          "name" : "YearInDateFormat",
+          "label" : "YearInDateFormat",
+          "formulaExpression" : "to_date(concat(\"Year_Dim\",'-','01','-','01'),'yyyy-MM-dd')",
+          "format" : "yyyy-MM-dd",
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "EXTRACT0" : {
+      "action" : "extractGrains",
+      "sources" : [ "LOAD_DATASET3" ],
+      "parameters" : {
+        "grainExtractions" : [ ]
+      }
+    },
+    "AGGREGATE1" : {
+      "action" : "aggregate",
+      "sources" : [ "EXTRACT0" ],
+      "parameters" : {
+        "aggregations" : [ {
+          "action" : "SUM",
+          "source" : "TotalCrbnCrAllocCost",
+          "name" : "TotalCrbnCrAllocCost_Aggregated",
+          "label" : "Sum of TotalCrbnCrAllocCost"
+        } ],
+        "groupings" : [ "CrbnCreditAllocId", "EmissionsActivityId" ],
+        "pivots" : [ ],
+        "nodeType" : "STANDARD"
+      }
+    },
+    "JOIN6" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET3", "JOIN5" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "SustainabilityCredit.Status", "SustainabilityCredit.Description", "SustainabilityCredit.ExternalIdentifier", "SustainabilityCredit.SustainabilityPurchaseId", "SustainabilityCredit.CrbnCreditProjectId", "SustainabilityCredit.CreditsRetiredDate", "SustainabilityCredit.Name", "SustainabilityCredit.CreditsIssueDate", "SustainabilityCredit.PurchaseDate", "SustainabilityCredit.SupplierId", "SustainabilityCredit.Id", "SustainabilityCredit.CreditsUnit", "SustainabilityCredit.VintageYear", "SustainabilityCredit.CostPerUnit", "SustainabilityCredit.CreditsAvailable", "SustainabilityCredit.TotalCost", "SustainabilityCredit.CreditsAllocated", "SustainabilityCredit.CreditsPurchased", "SustainabilityCredit.CarbonCreditProject.TotalSpend", "SustainabilityCredit.CarbonCreditProject.OwnerId", "SustainabilityCredit.CarbonCreditProject.TotalCrbnCrAvlInTco2e", "SustainabilityCredit.CarbonCreditProject.AdditionalBenefits", "SustainabilityCredit.CarbonCreditProject.ProjectType", "SustainabilityCredit.CarbonCreditProject.Country", "SustainabilityCredit.CarbonCreditProject.Region", "SustainabilityCredit.CarbonCreditProject.Id", "SustainabilityCredit.CarbonCreditProject.TotalCrbnCrPurchInTco2e", "SustainabilityCredit.CarbonCreditProject.TotalCrbnCrAllocInTco2e", "SustainabilityCredit.SustainabilityPurchase.BillingCountry", "SustainabilityCredit.SustainabilityPurchase.Type", "SustainabilityCredit.SustainabilityPurchase.BrokerId", "SustainabilityCredit.SustainabilityPurchase.Id", "SustainabilityCredit.SustainabilityPurchase.Name", "SustainabilityCredit.SustainabilityPurchase.InvoiceNumber", "SustainabilityCredit.SupplierId.Id" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "SustainabilityCreditId" ],
+        "rightQualifier" : "SustainabilityCredit",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "OUTPUT2" : {
+      "action" : "save",
+      "sources" : [ "JOIN11" ],
+      "parameters" : {
+        "fields" : [ ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Carbon Credit Distribution",
+          "name" : "CarbonCreditDistribution",
+          "folderName" : "NZC_2_0",
+          "rowLevelSecurityFilter" : "'Owner.UserRole.Roles' == \"$User.UserRoleId\" || 'OwnerId' == \"$User.Id\""
+        }
+      }
+    },
+    "JOIN7" : {
+      "action" : "join",
+      "sources" : [ "JOIN6", "BUCKET1" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "EmissionActivity.EmissionActivityCategory", "EmissionActivity.EmissionsScopeCategory_wo_All", "EmissionActivity.Id", "EmissionActivity.IsAllEmissions" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LOOKUP",
+        "leftKeys" : [ "EmissionsActivityId" ],
+        "rightQualifier" : "EmissionActivity",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "FORMULA2" : {
+      "action" : "formula",
+      "sources" : [ "JOIN8" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "Spend_per_CreditsPurchased",
+          "label" : "Spend_per_CreditsPurchased",
+          "formulaExpression" : "TotalSpend / TotalCrbnCrPurchInTco2e",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "LOAD_DATASET8" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "Country_Code_3_digit", "Country_Code_2_digit", "Country" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "Country_Codes",
+          "name" : "Country_Codes"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN8" : {
+      "action" : "join",
+      "sources" : [ "LOAD_DATASET5", "LOAD_DATASET8" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "Country" ],
+        "rightQualifier" : "CountryCode",
+        "rightKeys" : [ "Country_Code_2_digit" ]
+      }
+    },
+    "FILTER1" : {
+      "action" : "filter",
+      "sources" : [ "JOIN5" ],
+      "parameters" : {
+        "filterExpressions" : [ {
+          "type" : "TEXT",
+          "field" : "SustainabilityPurchase.Type",
+          "operator" : "EQUAL",
+          "operands" : [ "CARBON_CREDITS" ]
+        } ]
+      }
+    },
+    "FORMULA3" : {
+      "action" : "formula",
+      "sources" : [ "FILTER1" ],
+      "parameters" : {
+        "expressionType" : "SQL",
+        "fields" : [ {
+          "type" : "NUMBER",
+          "name" : "CreditsAllocationCost",
+          "label" : "CreditsAllocationCost",
+          "formulaExpression" : "CreditsAllocated * CostPerUnit",
+          "precision" : 10,
+          "scale" : 2,
+          "defaultValue" : ""
+        } ]
+      }
+    },
+    "LOAD_DATASET9" : {
+      "action" : "load",
+      "sources" : [ ],
+      "parameters" : {
+        "fields" : [ "UniqueUserName", "UserRoleId", "UserRole.Roles", "Id" ],
+        "dataset" : {
+          "type" : "analyticsDataset",
+          "label" : "User",
+          "name" : "User1"
+        },
+        "sampleDetails" : {
+          "type" : "TopN",
+          "sortBy" : [ ]
+        }
+      }
+    },
+    "JOIN9" : {
+      "action" : "join",
+      "sources" : [ "FORMULA1", "LOAD_DATASET9" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Owner.Id" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "OwnerId" ],
+        "rightQualifier" : "Owner",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN10" : {
+      "action" : "join",
+      "sources" : [ "FORMULA3", "LOAD_DATASET9" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ "Owner.Id" ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "OwnerId" ],
+        "rightQualifier" : "Owner",
+        "rightKeys" : [ "Id" ]
+      }
+    },
+    "JOIN11" : {
+      "action" : "join",
+      "sources" : [ "JOIN7", "LOAD_DATASET9" ],
+      "schema" : {
+        "fields" : [ ],
+        "slice" : {
+          "mode" : "DROP",
+          "ignoreMissingFields" : true,
+          "fields" : [ ]
+        }
+      },
+      "parameters" : {
+        "joinType" : "LEFT_OUTER",
+        "leftKeys" : [ "OwnerId" ],
+        "rightQualifier" : "Owner",
+        "rightKeys" : [ "Id" ]
+      }
+    }
+  },
+  "ui" : {
+    "nodes" : {
+      "LOAD_DATASET0" : {
+        "label" : "Sustainability Credit",
+        "description" : "",
+        "type" : "LOAD_DATASET",
+        "top" : 392,
+        "left" : 252.10000000000002,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET1" : {
+        "label" : "Carbon Credit Allocation",
+        "description" : "",
+        "type" : "LOAD_DATASET",
+        "top" : 530.2,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET2" : {
+        "label" : "Carbon Credit Allocation Items",
+        "description" : "",
+        "type" : "LOAD_DATASET",
+        "top" : 670.2,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET3" : {
+        "label" : "Carbon Credit Distribution",
+        "description" : "",
+        "type" : "LOAD_DATASET",
+        "top" : 390.2,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET4" : {
+        "label" : "Sustainability Purchase",
+        "description" : "",
+        "type" : "LOAD_DATASET",
+        "top" : 250.2,
+        "left" : 672,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET5" : {
+        "label" : "Carbon Credit Project",
+        "description" : "",
+        "type" : "LOAD_DATASET",
+        "top" : 250.2,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET6" : {
+        "label" : "EmissionsActivity",
+        "type" : "LOAD_DATASET",
+        "top" : 810.2,
+        "left" : 112,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "LOAD_DATASET7" : {
+        "label" : "Supplier",
+        "type" : "LOAD_DATASET",
+        "top" : 250.2,
+        "left" : 812,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "TRANSFORM0" : {
+        "label" : "Transform Emission Activity",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 810.2,
+        "left" : 252,
+        "graph" : {
+          "FORMULA0" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula Emissions Activity Category"
+          },
+          "BUCKET0" : {
+            "label" : "Bucket_ES_Category_wo_All"
+          },
+          "BUCKET1" : {
+            "label" : "Bucket All Emissions Flag"
+          }
+        },
+        "connectors" : [ {
+          "source" : "FORMULA0",
+          "target" : "BUCKET0"
+        }, {
+          "source" : "BUCKET0",
+          "target" : "BUCKET1"
+        } ]
+      },
+      "JOIN0" : {
+        "label" : "Join CC Allocation with CC Allocation Item",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 672,
+        "left" : 392.2
+      },
+      "JOIN1" : {
+        "label" : "Join CCD with CCAI",
+        "description" : "Carbon Credit Distribution with Carbon Credit Allocation Item",
+        "type" : "JOIN",
+        "top" : 672.1,
+        "left" : 672
+      },
+      "JOIN2" : {
+        "label" : "Join CCP with Sustainability Credit",
+        "description" : "Join Carbon Credit Purchase with Sustainability Credit",
+        "type" : "JOIN",
+        "top" : 392,
+        "left" : 532
+      },
+      "JOIN3" : {
+        "label" : "Join SP with SC",
+        "description" : "Join Sustainability Purchase with Sustainability Credit",
+        "type" : "JOIN",
+        "top" : 390.2,
+        "left" : 672
+      },
+      "JOIN4" : {
+        "label" : "Join EA with CCAI",
+        "description" : "Emission Activity with Carbon Credit Allocation Item",
+        "type" : "JOIN",
+        "top" : 670.2,
+        "left" : 952
+      },
+      "JOIN5" : {
+        "label" : "Join Supplier with SC",
+        "description" : "Supplier with Sustainability Credit",
+        "type" : "JOIN",
+        "top" : 390.2,
+        "left" : 812
+      },
+      "OUTPUT0" : {
+        "label" : "Output Sustainability Credit",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 390.2,
+        "left" : 1512
+      },
+      "OUTPUT1" : {
+        "label" : "Output CCAI",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 670.2,
+        "left" : 1512
+      },
+      "TRANSFORM1" : {
+        "label" : "Transform CCA",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 530.2,
+        "left" : 252,
+        "graph" : {
+          "TO_DIMENSION0" : {
+            "label" : "Year_Dim"
+          },
+          "FORMULA1" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Year to Date Format"
+          }
+        },
+        "connectors" : [ {
+          "source" : "TO_DIMENSION0",
+          "target" : "FORMULA1"
+        } ]
+      },
+      "AGGREGATE0" : {
+        "label" : "Aggregate 0",
+        "type" : "AGGREGATE",
+        "top" : 530.2,
+        "left" : 672,
+        "graph" : {
+          "EXTRACT0" : null,
+          "AGGREGATE1" : null
+        },
+        "connectors" : [ {
+          "source" : "EXTRACT0",
+          "target" : "AGGREGATE1"
+        } ]
+      },
+      "JOIN6" : {
+        "label" : "Join SC with CCD",
+        "description" : "Sustainability Credit with Carbon Credit Distribution",
+        "type" : "JOIN",
+        "top" : 530.2,
+        "left" : 812
+      },
+      "OUTPUT2" : {
+        "label" : "Output Carbon Credit Distribution",
+        "description" : "",
+        "type" : "OUTPUT",
+        "top" : 532,
+        "left" : 1512.1
+      },
+      "JOIN7" : {
+        "label" : "Join EA with CCD",
+        "description" : "Emissions Activity with Carbon Credit Distribution",
+        "type" : "JOIN",
+        "top" : 530.2,
+        "left" : 952
+      },
+      "TRANSFORM2" : {
+        "label" : "Transform CCP",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 252,
+        "left" : 532,
+        "graph" : {
+          "FORMULA2" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula Avg Cost per tCO2e"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "LOAD_DATASET8" : {
+        "label" : "Country_Codes",
+        "type" : "LOAD_DATASET",
+        "top" : 250.2,
+        "left" : 252,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN8" : {
+        "label" : "Join Country with CCP",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 250.2,
+        "left" : 392
+      },
+      "FILTER1" : {
+        "label" : "Filter Sustainability Credit",
+        "description" : "Include only Carbon Credit Type records for this app",
+        "type" : "FILTER",
+        "top" : 390.2,
+        "left" : 952
+      },
+      "TRANSFORM3" : {
+        "label" : "Transform Sustainability Credit",
+        "description" : "",
+        "type" : "TRANSFORM",
+        "top" : 390.2,
+        "left" : 1092,
+        "graph" : {
+          "FORMULA3" : {
+            "parameters" : {
+              "type" : "BASE_FORMULA_UI"
+            },
+            "label" : "Formula"
+          }
+        },
+        "connectors" : [ ]
+      },
+      "LOAD_DATASET9" : {
+        "label" : "User",
+        "type" : "LOAD_DATASET",
+        "top" : 252.2,
+        "left" : 1231.8,
+        "parameters" : {
+          "sampleSize" : 2000
+        }
+      },
+      "JOIN9" : {
+        "label" : "Join Owner with Carbon Credit Allocation",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 532,
+        "left" : 392
+      },
+      "JOIN10" : {
+        "label" : "Join Owner with Sustainability Credit",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 390.2,
+        "left" : 1372
+      },
+      "JOIN11" : {
+        "label" : "Join Owner with CC Distribution",
+        "description" : "",
+        "type" : "JOIN",
+        "top" : 532.1,
+        "left" : 1372
+      }
+    },
+    "connectors" : [ {
+      "source" : "LOAD_DATASET3",
+      "target" : "JOIN6"
+    }, {
+      "source" : "LOAD_DATASET6",
+      "target" : "TRANSFORM0"
+    }, {
+      "source" : "LOAD_DATASET2",
+      "target" : "JOIN0"
+    }, {
+      "source" : "JOIN9",
+      "target" : "JOIN0"
+    }, {
+      "source" : "JOIN0",
+      "target" : "JOIN1"
+    }, {
+      "source" : "AGGREGATE0",
+      "target" : "JOIN1"
+    }, {
+      "source" : "LOAD_DATASET0",
+      "target" : "JOIN2"
+    }, {
+      "source" : "TRANSFORM2",
+      "target" : "JOIN2"
+    }, {
+      "source" : "JOIN2",
+      "target" : "JOIN3"
+    }, {
+      "source" : "LOAD_DATASET4",
+      "target" : "JOIN3"
+    }, {
+      "source" : "JOIN1",
+      "target" : "JOIN4"
+    }, {
+      "source" : "TRANSFORM0",
+      "target" : "JOIN4"
+    }, {
+      "source" : "JOIN3",
+      "target" : "JOIN5"
+    }, {
+      "source" : "LOAD_DATASET7",
+      "target" : "JOIN5"
+    }, {
+      "source" : "JOIN10",
+      "target" : "OUTPUT0"
+    }, {
+      "source" : "JOIN4",
+      "target" : "OUTPUT1"
+    }, {
+      "source" : "LOAD_DATASET1",
+      "target" : "TRANSFORM1"
+    }, {
+      "source" : "JOIN5",
+      "target" : "JOIN6"
+    }, {
+      "source" : "JOIN11",
+      "target" : "OUTPUT2"
+    }, {
+      "source" : "LOAD_DATASET3",
+      "target" : "AGGREGATE0"
+    }, {
+      "source" : "JOIN6",
+      "target" : "JOIN7"
+    }, {
+      "source" : "TRANSFORM0",
+      "target" : "JOIN7"
+    }, {
+      "source" : "JOIN8",
+      "target" : "TRANSFORM2"
+    }, {
+      "source" : "LOAD_DATASET5",
+      "target" : "JOIN8"
+    }, {
+      "source" : "LOAD_DATASET8",
+      "target" : "JOIN8"
+    }, {
+      "source" : "JOIN5",
+      "target" : "FILTER1"
+    }, {
+      "source" : "FILTER1",
+      "target" : "TRANSFORM3"
+    }, {
+      "source" : "TRANSFORM1",
+      "target" : "JOIN9"
+    }, {
+      "source" : "LOAD_DATASET9",
+      "target" : "JOIN9"
+    }, {
+      "source" : "TRANSFORM3",
+      "target" : "JOIN10"
+    }, {
+      "source" : "LOAD_DATASET9",
+      "target" : "JOIN10"
+    }, {
+      "source" : "JOIN7",
+      "target" : "JOIN11"
+    }, {
+      "source" : "LOAD_DATASET9",
+      "target" : "JOIN11"
+    } ],
+    "hiddenColumns" : [ ]
+  }
+}

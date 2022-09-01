@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveXmd xmlns="http://soap.sforce.com/2006/04/metadata">
+    <dataset>CarbonCreditDistribution</dataset>
+    <dimensions>
+        <field>SustainabilityCredit.CarbonCreditProject.MitigationType</field>
+        <isDerived>false</isDerived>
+        <label>Mitigation Type</label>
+        <sortIndex>0</sortIndex>
+    </dimensions>
+    <measures>
+        <field>TotalCrbnCrAllocInTco2e</field>
+        <isDerived>false</isDerived>
+        <label>TotalCrbnCrAllocInTco2e</label>
+        <sortIndex>0</sortIndex>
+    </measures>
+    <measures>
+        <field>sum_TotalCrbnCrAllocInTco2e</field>
+        <isDerived>true</isDerived>
+        <label>Total Carbon Credit Allocation</label>
+        <showInExplorer>true</showInExplorer>
+        <sortIndex>0</sortIndex>
+    </measures>
+</WaveXmd>
