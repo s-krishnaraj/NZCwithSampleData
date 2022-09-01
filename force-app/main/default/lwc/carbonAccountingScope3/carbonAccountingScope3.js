@@ -3,11 +3,11 @@ import { LightningElement ,wire, api} from 'lwc';
 import getNavigationItems from '@salesforce/apex/GetItems.getPageItems';
 
 export default class CarbonAccounting extends LightningElement {
-    @api app_description = " Manage Scope 1, Scope 2 Carbon Accounting";
+    @api app_description = " Manage Scope 3 Carbon Accounting";
    
-    @api app_welcome_text = "Explore how Carbon Accounting(Scope1, Scope2) can be done using Net Zero Cloud";
+    @api app_welcome_text = "Explore about Scope 3 Carbon Accounting, including Waste-related & Prcourement-related Emissions";
 
-    page_Name = 'Carbon Accounting';
+    page_Name = 'Scope3 Carbon Accounting';
     object_Name = 'ElectricityEmssnFctrSet';
     record_Name = 'Germany - IEA 2019';
 

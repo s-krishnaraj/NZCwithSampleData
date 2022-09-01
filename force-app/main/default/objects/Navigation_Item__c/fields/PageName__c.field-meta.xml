@@ -45,6 +45,11 @@
                 <default>false</default>
                 <label>Net Zero Analytics</label>
             </value>
+            <value>
+                <fullName>Scope3 Carbon Accounting</fullName>
+                <default>false</default>
+                <label>Scope3 Carbon Accounting</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

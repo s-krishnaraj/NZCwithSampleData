@@ -273,9 +273,8 @@ INSERT INTO "StnryAssetEnrgyUse" VALUES(55,'Cirrus Tower - 2021 Dec 1 - Dec 31 -
 INSERT INTO "StnryAssetEnrgyUse" VALUES(56,'Cirrus Tower - 2022 Jan 1 - Jan 31 - Electricity','','','2022-01-31','10000.0','kWh','Electricity','','2022-01-01','','','','','','1','7','');
 INSERT INTO "StnryAssetEnrgyUse" VALUES(57,'Wolf Point Tower - 2019 Jan 1 - Dec 31 - Electricity','','','2019-12-31','4000000.0','kWh','Electricity','','2019-01-01','','','','','','2','11','');
 INSERT INTO "StnryAssetEnrgyUse" VALUES(58,'Wolf Point Tower - 2020 Jan 1 - Dec 31 - Electricity','','','2020-12-31','3000000.0','kWh','Electricity','','2020-01-01','','','','','','2','1','');
-INSERT INTO "StnryAssetEnrgyUse" VALUES(59,'Wolf Point Tower - 2021 Jan 1 - Jan 31 - Electricity','','','2021-01-31','300000.0','kWh','Electricity','','2021-01-01','','','','','','2','2','');
 INSERT INTO "StnryAssetEnrgyUse" VALUES(60,'Wolf Point Tower - 2021 Feb 1 - Feb 28 - Electricity','','','2021-02-28','300000.0','kWh','Electricity','','2021-02-01','','','','','','2','2','');
-INSERT INTO "StnryAssetEnrgyUse" VALUES(61,'Wolf Point Tower - 2021 Mar 1 - Mar 7 - Electricity','','','2021-03-07','70000.0','kWh','Electricity','','2021-03-01','','','','','','2','2','');
+INSERT INTO "StnryAssetEnrgyUse" VALUES(61,'Wolf Point Tower - 2021 Mar 1 - Mar 7 - Electricity','','','','70000.0','kWh','Electricity','','2021-03-01','','','','','','2','2','');
 INSERT INTO "StnryAssetEnrgyUse" VALUES(62,'Wolf Point Tower - 2021 May 15 - May 31 - Electricity','','','2021-05-31','150000.0','kWh','Electricity','','2021-05-15','','','','','','2','2','');
 INSERT INTO "StnryAssetEnrgyUse" VALUES(63,'Wolf Point Tower - 2021 Jun 1 - Jun 30 - Electricity','','','2021-06-30','300000.0','kWh','Electricity','','2021-06-01','','','','','','2','2','');
 INSERT INTO "StnryAssetEnrgyUse" VALUES(64,'Wolf Point Tower - 2021 Jul 1 - Jul 31 - Electricity','','','2021-07-31','300000.0','kWh','Electricity','','2021-07-01','','','','','','2','2','');
