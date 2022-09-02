@@ -3,7 +3,6 @@
     <formFactors>Large</formFactors>
     <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
     <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
-    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
     <label>Industries Sustainability</label>
     <navType>Console</navType>
     <tabs>standard-home</tabs>
@@ -52,6 +51,7 @@
     <tabs>standard-Supplier</tabs>
     <tabs>standard-SustainabilityScorecard</tabs>
     <tabs>Carbon_Accounting_Scope_3</tabs>
+    <tabs>Scope3_Procurement_Analysis</tabs>
     <tabs>Navigation_Item__c</tabs>
     <tabs>Explore_Carbon_Accounting</tabs>
     <uiType>Lightning</uiType>
@@ -67,6 +67,9 @@
         </mappings>
         <mappings>
             <tab>Navigation_Item__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Scope3_Procurement_Analysis</tab>
         </mappings>
         <mappings>
             <tab>standard-AirTravelEmssnFctr</tab>

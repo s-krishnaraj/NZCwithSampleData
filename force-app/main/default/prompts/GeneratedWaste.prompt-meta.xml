@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>GeneratedWaste</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>Back to Learning Path</actionButtonLabel>
+        <actionButtonLink>/lightning/n/Carbon_Accounting_scope_3</actionButtonLink>
+        <body>&lt;p&gt;The Generated Waste record is like an energy use record and helps a company account for the waste that’s generated. Here are the record’s key fields.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Waste Type&lt;/li&gt;&lt;li&gt;Disposal Type&lt;/li&gt;&lt;li&gt;Disposal Site Type&lt;/li&gt;&lt;li&gt;Disposed Waste Quantity&lt;/li&gt;&lt;li&gt;Disposed Waste Quantity Unit&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;While defining a Generated Waste record, you can either specify the &lt;em&gt;Stationary Asset Environmental Source &lt;/em&gt;or the &lt;em&gt;Scope 3 Emissions Source&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;If a Stationary Asset Environmental Source(SAES) record is associated with a Generated Waste record &amp;amp; &lt;em&gt;Disposal Site Type&lt;/em&gt; = &lt;em&gt;Offsite&lt;/em&gt;, the emissions are recorded in the field &lt;em&gt;Scope 3 Upstream Emissions from Waste Generated in Operations (tCO₂e).&lt;/em&gt;&lt;/li&gt;&lt;li&gt;If SAES record is associated with a Generated Waste record and &lt;em&gt;Disposal Site Type = Onsite&lt;/em&gt;, the emissions are recorded in the field &lt;em&gt;Scope 1 Emissions (tCO₂e).&lt;/em&gt;&lt;/li&gt;&lt;li&gt;If a Scope 3 Emissions Source record is associated with a Generated Waste record, and &lt;em&gt;Disposal Site Type = Offsite&lt;/em&gt;, the emissions are recorded in the field Scope 3 Downstream Emissions from End-of-Life Treatment of Sold Products (tCO₂e).&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;To calculate waste-based emissions, Net Zero Cloud looks at preloaded data in the &lt;strong&gt;Waste Disposal Emissions Factors &lt;/strong&gt;record. The key values used in the calculation are &lt;em&gt;waste type and disposal method&lt;/em&gt;. Emissions from waste depend on the type of waste being disposed of (cardboard, food waste, plastic, or aluminum cans), and the waste disposal method (incinerated, landfilled, or recycled). &lt;/p&gt;</body>
+        <delayDays>1</delayDays>
+        <displayType>DockedComposer</displayType>
+        <header>Generated Waste</header>
+        <isPublished>true</isPublished>
+        <masterLabel>GeneratedWaste</masterLabel>
+        <publishedDate>2022-09-02</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2022-09-02</startDate>
+        <targetPageKey1>GeneratedWaste</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <timesToDisplay>10</timesToDisplay>
+        <title>Learn about Generated Waste</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

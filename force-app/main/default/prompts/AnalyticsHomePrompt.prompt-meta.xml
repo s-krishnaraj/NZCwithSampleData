@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Analytics Home Prompt</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>Back to Learning Path</actionButtonLabel>
+        <actionButtonLink>/lightning/n/Explore_Carbon_Accounting</actionButtonLink>
+        <body>&lt;p&gt;Click on the &lt;strong&gt;Climate Action Dashboard &lt;/strong&gt;to see how Carbon Accounting can be represented to key stakeholders&lt;/p&gt;</body>
+        <delayDays>1</delayDays>
+        <dismissButtonLabel>Dismiss</dismissButtonLabel>
+        <displayPosition>MiddleCenter</displayPosition>
+        <displayType>FloatingPanel</displayType>
+        <isPublished>true</isPublished>
+        <masterLabel>Analytics Home Prompt</masterLabel>
+        <publishedDate>2022-09-01</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2022-09-01</startDate>
+        <targetPageKey1>analytics</targetPageKey1>
+        <targetPageType>standard__namedPage</targetPageType>
+        <timesToDisplay>10</timesToDisplay>
+        <title>Explore the Climate Action Dashboard</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

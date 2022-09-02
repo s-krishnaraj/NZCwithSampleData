@@ -165,5 +165,5 @@ flows:
                 task: dx
                 options:
                     command: force:source:deploy
-                    extra: -m "LightningComponentBundle,FlexiPage,CustomTab,CustomApplication"
+                    extra: -m "LightningComponentBundle,FlexiPage,CustomTab,CustomApplication,Prompt"
 

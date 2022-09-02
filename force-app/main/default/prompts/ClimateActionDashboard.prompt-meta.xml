@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>ClimateActionDashboard</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>Back to Learning Path</actionButtonLabel>
+        <actionButtonLink>/lightning/n/Explore_Carbon_Accounting</actionButtonLink>
+        <body>&lt;p&gt;Climate Action Dashboard provides insights into your organization&apos;s carbon emissions data that you can use to devise a climate action plan to reduce your emissions. The dashboards charts answer these questions:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;What&apos;s the trend of location-based emissions and market-based emissions when compared to a previous period?&lt;/li&gt;&lt;li&gt;What&apos;s the distribution of emissions by source and country?&lt;/li&gt;&lt;li&gt;What are the top factors contributing to my organization’s overall emissions?&lt;/li&gt;&lt;li&gt;What’s the total energy and electricity consumed by my organization’s buildings?&lt;/li&gt;&lt;li&gt;What’s the total emissions from electricity consumption by city?&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</body>
+        <delayDays>1</delayDays>
+        <displayType>DockedComposer</displayType>
+        <header>Climate Action Dashboard</header>
+        <isPublished>true</isPublished>
+        <masterLabel>ClimateActionDashboard</masterLabel>
+        <publishedDate>2022-09-01</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2022-09-01</startDate>
+        <targetPageKey1>analytics</targetPageKey1>
+        <targetPageType>standard__namedPage</targetPageType>
+        <timesToDisplay>10</timesToDisplay>
+        <title>Overview</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

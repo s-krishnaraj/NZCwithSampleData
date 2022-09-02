@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Scope3 Emissions Source</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;As per the GHG Protocol, business travel is a primary contributor to scope 3 emissions. Lets look at an example here. Emissions from business travel may arise from:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Air travel&lt;/li&gt;&lt;li&gt;Rail, bus, or other modes of travel&lt;/li&gt;&lt;li&gt;Business travel in rental cars or employee-owned vehicles other than employees commuting to and from work&lt;/li&gt;&lt;li&gt;Business travelers staying in hotels&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;The Emissions Source record is associated to different emissions factors which is then applied to the corresponding Energy Use records.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Air Travel Emissions Factor&lt;/li&gt;&lt;li&gt;Ground Travel Emissions Factor&lt;/li&gt;&lt;li&gt;Rental Car Emissions Factor&lt;/li&gt;&lt;li&gt;Hotel Stay Emissions Factor&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Next, lets look at the different energy use records&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</body>
+        <customApplication>standard__IndustriesSustainability</customApplication>
+        <delayDays>1</delayDays>
+        <displayType>DockedComposer</displayType>
+        <header>Scope 3 Emissions Source</header>
+        <isPublished>true</isPublished>
+        <masterLabel>Scope3 Emissions Source Step 1</masterLabel>
+        <publishedDate>2022-09-02</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2022-09-02</startDate>
+        <stepNumber>1</stepNumber>
+        <targetPageKey1>Scope3EmssnSrc</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <timesToDisplay>10</timesToDisplay>
+        <title>Key Info in Scope3 Emissions Source</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body>&lt;p&gt;The Scope 3 emissions are captured across different energy use records. Each of these energy use records roll up to a Scope 3 carbon footprint&lt;/p&gt;</body>
+        <dismissButtonLabel>Dismiss</dismissButtonLabel>
+        <displayType>Targeted</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Scope3 Emissions Source Step 2</masterLabel>
+        <referenceElementContext>{&quot;scope&quot;:{&quot;scope&quot;:{&quot;attributes&quot;:{&quot;id&quot;:&quot;force_relatedListContainer&quot;}},&quot;attributes&quot;:{&quot;id&quot;:&quot;flexipage_tabset&quot;}},&quot;version&quot;:2,&quot;interactions&quot;:[{&quot;unless&quot;:{&quot;css&quot;:&quot;[aria-selected=true]&quot;},&quot;scope&quot;:{&quot;scope&quot;:{&quot;attributes&quot;:{&quot;id&quot;:&quot;relatedListsTabTab&quot;}},&quot;attributes&quot;:{&quot;id&quot;:&quot;flexipage_tabset&quot;}},&quot;type&quot;:&quot;click&quot;}]}</referenceElementContext>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>2</stepNumber>
+        <targetPageKey1>Scope3EmssnSrc</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <title>Air, Hotel Stay &amp; Car Rental EURs</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <actionButtonLabel>Back to Learning Path</actionButtonLabel>
+        <actionButtonLink>/lightning/n/Carbon_Accounting_scope_3</actionButtonLink>
+        <body>&lt;p&gt;Carbon Footprints can be auto-created (if enabled in settings). A carbon Footprint is created for a reporting year, per Scope 3 emissions source.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The &lt;em&gt;upstream/downstream emissions&lt;/em&gt; are auto-calculated from the underlying energy use records.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Here we see all the upstream emissions are coming from&lt;strong&gt; Business Travel&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;To ensure that records aren’t updated accidentally or by automated processes, &lt;strong&gt;lock carbon footprint records. &lt;/strong&gt;To lock or unlock a carbon footprint record, from the action menu on the Carbon Footprint page, select Lock.&lt;/p&gt;</body>
+        <customApplication>standard__IndustriesSustainability</customApplication>
+        <displayType>DockedComposer</displayType>
+        <header>Scope 3 Carbon Footprint</header>
+        <isPublished>false</isPublished>
+        <masterLabel>Scope3 Emissions Source Step 3</masterLabel>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>3</stepNumber>
+        <targetPageKey1>Scope3CrbnFtprnt</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <title>Scope 3 Carbon Footprint</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

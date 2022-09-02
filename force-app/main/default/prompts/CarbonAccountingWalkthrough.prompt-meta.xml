@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>Carbon Accounting Walkthrough</masterLabel>
+    <promptVersions>
+        <body>&lt;p&gt;Stationary asset environmental sources are used to represent all buildings and data centers associated with a company.&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;Key information captured here can include, but not limited to :&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;strong style=&quot;color: rgb(30, 30, 28);&quot;&gt;Carbon Emissions Scope Allocation&lt;/strong&gt;&lt;span style=&quot;color: rgb(30, 30, 28);&quot;&gt; : specify the scope to which the emissions from each fuel is allocated.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong style=&quot;color: rgb(30, 30, 28);&quot;&gt;Refrigerant Emissions Factor &lt;/strong&gt;&lt;span style=&quot;color: rgb(30, 30, 28);&quot;&gt;: calculate tCO₂e from refrigerant leakage&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong style=&quot;color: rgb(30, 30, 28);&quot;&gt;Electricity Emissions Factor Set&lt;/strong&gt;&lt;span style=&quot;color: rgb(30, 30, 28);&quot;&gt; : datasets from sources such as&amp;nbsp;&lt;/span&gt;&lt;a href=&quot;https://www.epa.gov/egrid&quot; rel=&quot;noopener noreferrer&quot; target=&quot;_blank&quot; style=&quot;color: rgb(0, 109, 204);&quot;&gt; (eGRID) website&lt;/a&gt;&lt;span style=&quot;color: rgb(30, 30, 28);&quot;&gt;&amp;nbsp;can be used to accurately calculate electricity-based emissions in a specific postal code.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong style=&quot;color: rgb(30, 30, 28);&quot;&gt;Other Emissions Factor Set&lt;/strong&gt;&lt;span style=&quot;color: rgb(30, 30, 28);&quot;&gt; : All individual emissions and conversion factors for sources that are not included in the electricity grid or scope 3 data types&amp;nbsp;&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong style=&quot;color: rgb(30, 30, 28);&quot;&gt;Regional Building Energy Intensity&lt;/strong&gt;&lt;span style=&quot;color: rgb(30, 30, 28);&quot;&gt; : You can use the CBECS building energy intensity data to plug energy use gaps in the data of commercial buildings&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</body>
+        <customApplication>standard__IndustriesSustainability</customApplication>
+        <delayDays>1</delayDays>
+        <displayType>DockedComposer</displayType>
+        <header>Stationary Asset Env Source</header>
+        <isPublished>true</isPublished>
+        <masterLabel>Carbon Accounting Walkthrough Step 1</masterLabel>
+        <publishedDate>2022-09-01</publishedDate>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2022-09-01</startDate>
+        <stepNumber>1</stepNumber>
+        <targetPageKey1>StnryAssetEnvrSrc</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <timesToDisplay>10</timesToDisplay>
+        <title>Details about SAES</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body>&lt;p&gt;They are created for a specific date range and are associated with an emissions source. Enter energy consumption info, such as the quantity of electricity, diesel, or natural gas consumed,  in various units of measure that are specific to the activity or fuel being consumed.&lt;/p&gt;</body>
+        <dismissButtonLabel>Dismiss</dismissButtonLabel>
+        <displayType>Targeted</displayType>
+        <isPublished>false</isPublished>
+        <masterLabel>Carbon Accounting Walkthrough Step 2</masterLabel>
+        <referenceElementContext>{&quot;scope&quot;:{&quot;scope&quot;:{&quot;attributes&quot;:{&quot;id&quot;:&quot;force_relatedListContainer&quot;}},&quot;attributes&quot;:{&quot;id&quot;:&quot;flexipage_tabset&quot;}},&quot;version&quot;:2,&quot;interactions&quot;:[{&quot;unless&quot;:{&quot;css&quot;:&quot;[aria-selected=true]&quot;},&quot;scope&quot;:{&quot;scope&quot;:{&quot;attributes&quot;:{&quot;id&quot;:&quot;relatedListsTabTab&quot;}},&quot;attributes&quot;:{&quot;id&quot;:&quot;flexipage_tabset&quot;}},&quot;type&quot;:&quot;click&quot;}]}</referenceElementContext>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>2</stepNumber>
+        <targetPageKey1>StnryAssetEnvrSrc</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <title>Energy Use Records</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body>&lt;p&gt;&lt;span style=&quot;color: rgb(30, 30, 30);&quot;&gt;Net Zero Cloud automatically calculates many of the fields based on energy use data and emissions factors. Lets look at the different factors impacting calculations:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;strong style=&quot;color: rgb(30, 30, 30);&quot;&gt;General asset information&lt;/strong&gt;&lt;span style=&quot;color: rgb(30, 30, 30);&quot;&gt; like the total and occupied floor area and information whether the asset is company-owned helps with calculations.&lt;/span&gt;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Fuel type&lt;/strong&gt;: There are multiple fuel types for which you can enter energy consumption, including Electricity, Diesel, Natural Gas, and Propane.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Fuel consumption unit&lt;/strong&gt;: Multiple units of measure are supported natively in Net Zero Cloud corresponding to the different fuel types that are supported.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Emissions Factors&amp;nbsp;: &lt;/strong&gt;If the emissions factors are specified on the SAES/VAES, they are automatically inherited by the associated energy use records.&amp;nbsp;&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Supplemental Emissions : &lt;/strong&gt;You can also specify supplemental emissions for each scope to manually adjust emissions, if needed.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Grid Mix : &lt;/strong&gt;These values on the energy use record are calculated based on the grid mix percentages specified in the associated electricity emissions factor set record.&amp;nbsp;&lt;/li&gt;&lt;li&gt;The market-based grid mix depends on the electricity that organisations have chosen to purchase from specific suppliers and takes supplier-specific emissions rates into consideration.&lt;/li&gt;&lt;li&gt;The location-based grid mix depends on the emissions intensity of the local grid area where the electricity usage occurs.&lt;/li&gt;&lt;li&gt;&lt;strong style=&quot;color: rgb(30, 30, 30);&quot;&gt;Renewable Energy : &lt;/strong&gt;&lt;span style=&quot;color: rgb(30, 30, 30);&quot;&gt;Renewable energy displays the quantity of electricity that’s generated from renewable sources.&amp;nbsp;You can specifically allocate electricity generated from renewable sources in the Renewable Energy Type and Allocated Renewable Energy fields.&lt;/span&gt;&lt;/li&gt;&lt;/ol&gt;</body>
+        <customApplication>standard__IndustriesSustainability</customApplication>
+        <displayType>DockedComposer</displayType>
+        <header>Energy Use Records</header>
+        <isPublished>false</isPublished>
+        <masterLabel>Carbon Accounting Walkthrough Step 3</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>3</stepNumber>
+        <targetPageKey1>StnryAssetEnrgyUse</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <title>Calculations In Energy Use records</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <body>&lt;p&gt;&lt;span style=&quot;color: rgb(30, 30, 30);&quot;&gt;Carbon Footprints roll up the emissions data from energy user records. You attach multiple Stationary Asset Energy Use records to a stationary asset carbon footprint record to get a single calculated carbon footprint for an asset.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(30, 30, 30);&quot;&gt;If a carbon footprint record exists for a given period, all new energy use records falling within that period get automatically associated with this carbon footprint record. If you create a new energy use record and it covers a time period for which a carbon footprint record does not yet exist, Net Zero Cloud automatically creates a new carbon footprint and associates the energy record with it.&lt;/span&gt;&lt;/p&gt;</body>
+        <displayType>DockedComposer</displayType>
+        <header>Introduction to Carbon Footprints</header>
+        <isPublished>false</isPublished>
+        <masterLabel>Carbon Accounting Walkthrough Step 4</masterLabel>
+        <shouldDisplayActionButton>false</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>4</stepNumber>
+        <targetPageKey1>StnryAssetCrbnFtprnt</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <title>Carbon Footprints explained</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+    <promptVersions>
+        <actionButtonLabel>Back to Learning Path</actionButtonLabel>
+        <actionButtonLink>/lightning/n/Explore_Carbon_Accounting</actionButtonLink>
+        <body>&lt;p&gt;&lt;span style=&quot;color: rgb(30, 30, 30);&quot;&gt;Stationary Asset Carbon Footprint Items for a Carbon Footprint contain data for an individual fuel type. These are system generated records &lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;The following key information can be found on a stationary asset carbon footprint item record.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Total Emissions (tCO₂e) from the fuel type.&lt;/li&gt;&lt;li&gt;Total Energy Consumption of the Fuel Type, expressed in kWh equivalent, even if the underlying fuel is not electricity.&lt;/li&gt;&lt;li&gt;Energy Consumption Intensity of the Fuel Type for the current and previous years.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</body>
+        <displayType>DockedComposer</displayType>
+        <header>Carbon Footprint Items</header>
+        <isPublished>false</isPublished>
+        <masterLabel>Carbon Accounting Walkthrough Step 5</masterLabel>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>false</shouldIgnoreGlobalDelay>
+        <stepNumber>5</stepNumber>
+        <targetPageKey1>StnryAssetCrbnFtprntItm</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <title>Carbon Footprint Items Explained</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>
