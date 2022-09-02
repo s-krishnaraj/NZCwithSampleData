@@ -1,3 +1,73 @@
+Air Travel Emissions Factor:
+  sf_object: AirTravelEmssnFctr
+  fields:
+    - DistanceUnit
+    - EmissionFactorDataSource
+    - EmissionFactorUpdateYear
+    - Name
+    - MediumHaulMaximumDistance
+    - N2oPsgrKmLongHaulInKgCo2e
+    - N2oPsgrKmMediumHaulInKgCo2e
+    - N2oPsgrKmShortHaulInKgCo2e
+    - N2oPsgrMileLongHaulInKgCo2e
+    - N2oPsgrMileMediumHaulInKgCo2e
+    - N2oPsgrMileShortHaulInKgCo2e
+    - LongHaulMinimumDistance
+    - Ch4PsgrKmMediumHaulInKgCo2e
+    - Ch4PsgrKmShortHaulInKgCo2e
+    - Ch4PsgrMileLongHaulInKgCo2e
+    - Ch4PsgrMileMediumHaulInKgCo2e
+    - Ch4PsgrMileShortHaulInKgCo2e
+    - Co2PsgrKmLongHaulInKg
+    - Co2PsgrKmMediumHaulInKg
+    - Co2PsgrKmShortHaulInKg
+    - Co2PsgrMileLongHaulInKg
+    - Co2PsgrMileMediumHaulInKg
+    - Co2PsgrMileShortHaulInKg
+    - Ch4PsgrKmLongHaulInKgCo2e
+
+Ground Travel Emissions Factor:
+  sf_object: GroundTravelEmssnFctr
+  fields:
+    - Name
+    - DistanceUnit
+    - EmissionFactorDataSource
+    - EmissionFactorUpdateYear
+    - PersCarEmssnInKgCo2eDstnUnit
+    - TaxiEmssnInKgCo2eDstnUnit
+    - TaxiRateForDstnUnit
+    - TrainEmssnInKgCo2eDstnUnit
+    - TrainRateForDstnUnit
+
+Hotel Stay Emissions Factor:
+  sf_object: HotelStayEmssnFctr
+  fields:
+    - Name
+    - EmissionFactorDataSource
+    - EmissionFactorUpdateYear
+    - HotelStayEmssnInKgCo2eNight
+
+Other Emissions Factor Set:
+  sf_object: OtherEmssnFctrSet
+  fields:
+    - Name
+    - EmissionFactorDataSource
+    - EmissionFactorUpdateYear
+    - Ch4GlblWarmingPot
+    - RefrigerantLeakageRtInKgItKwh
+    - N2oGlblWarmingPot
+    - RefrigerantLeakageRtInKgM2
+    - RefrigerantLeakageRtInKgSqft
+
+Rental Car Emissions Factor:
+  sf_object: RentalCarEmssnFctr
+  fields:
+    - Name
+    - EmissionFactorDataSource
+    - EmissionFactorUpdateYear
+    - FuelEfficiency
+    - FuelEfficiencyInMpg
+    - FuelEfficiencyUnit
 
 ProcurementEmmsnFactorSet:
   sf_object: PcmtEmssnFctrSet
@@ -134,7 +204,12 @@ Scope3CarbonFootprint:
       table: Scope3EmssnSrc
   soql_filter: WHERE External_ID__c LIKE 'scope3footprint%'
 
-
+Inflation Rates:
+  sf_object: InflationRate
+  fields:
+    - CalendarYear
+    - CurrencyCode
+    - InflationRate
 
 Scope3ProcurementSummary:
   sf_object: Scope3PcmtSummary
@@ -185,7 +260,6 @@ Scope3ProcurementItems:
   fields:
     - External_Id__c
     - Name
-    - ReportDate
     - Scope3EmissionsCalculationType
     - VendorPrvdScope3EmssnInTco2e
     - Scope3GhgCategory
@@ -204,3 +278,81 @@ Scope3ProcurementItems:
     PcmtEmssnFctrSetItemId:
       table: PcmtEmssnFctrSetItem
   soql_filter: WHERE External_Id__c Like 'ProcureItems%'
+
+Air Travel Energy Use:
+  sf_object: AirTravelEnrgyUse
+  fields:
+    - Ch4PassengerKmInKgCo2e
+    - Ch4PassengerMileInKgCo2e
+    - Co2PassengerKmInKg
+    - Co2PassengerMileInKg
+    - CostCenter
+    - EndDate
+    - HaulLength
+    - N2oPassengerKmInKgCo2e
+    - N2oPassengerMileInKgCo2e
+    - Name
+    - Scope3EmissionsInTco2e
+    - SegmentDistance
+    - SegmentDistanceInMiles
+    - SegmentDistanceUnit
+    - StartDate
+    - SuplScope3Emissions
+  lookups:
+    AirTravelEmssnFctrId:
+      table: AirTravelEmssnFctr
+    SupplierId:
+      table: Supplier
+    Scope3EmssnSrcId:
+      table: Scope3EmssnSrc
+
+Rental Car Energy Use:
+  sf_object: RentalCarEnrgyUse
+  fields:
+    - Ch4EmissionsInKg
+    - Co2EmissionsInKg
+    - CostCenter
+    - Distance
+    - DistanceUnit
+    - EndDate
+    - FuelEfficiencyInLkm
+    - FuelEfficiencyInMpg
+    - FuelType
+    - N2oEmissionsInKg
+    - Name
+    - RentalCarCompanyName
+    - Scope3EmissionsInTco2e
+    - StartDate
+    - SuplScope3Emissions
+    - TotalFuelConsumptionInGal
+    - TotalFuelConsumptionInLiter
+  lookups:
+    RentalCarEmssnFctrId:
+      table: RentalCarEmssnFctr
+    SupplierId:
+      table: Supplier
+    Scope3EmssnSrcId:
+      table: Scope3EmssnSrc
+
+Hotel Stay Energy Use:
+  sf_object: HotelStayEnrgyUse
+  fields:
+    - EmissionFctrKgCo2eRoomPerNight
+    - EndDate
+    - HotelCity
+    - HotelCountry
+    - HotelName
+    - Name
+    - RoomCount
+    - RoomType
+    - Scope3EmissionsInTco2e
+    - StartDate
+    - StayNightsCount
+    - TravelerName
+  lookups:
+    HotelStayEmssnFctrId:
+      table: HotelStayEmssnFctr
+    SupplierId:
+      table: Supplier
+    Scope3EmssnSrcId:
+      table: Scope3EmssnSrc

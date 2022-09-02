@@ -99,6 +99,13 @@ tasks:
         options: 
             mapping: datasets/waste.yml
             sql_path: datasets/db_waste.sql
+    load_scope3:
+        description: Loads DATA for Scope3 procurement 
+        class_path: cumulusci.tasks.bulkdata.LoadData
+        group: nzcData
+        options: 
+            mapping: datasets/scope3procurement.yml
+            sql_path: datasets/db_procurement.sql
 flows:
     extract_record_type:
         group: data
@@ -147,6 +154,8 @@ flows:
                 task: load_vehicles
             11: #data loading 
                 task: load_waste
+            12: #data loading
+                task: load_scope3
             12: 
                 task: dx
                 options:
