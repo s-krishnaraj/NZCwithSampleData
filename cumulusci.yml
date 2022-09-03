@@ -173,7 +173,7 @@ flows:
                 task: dx
                 options:
                     command: force:source:deploy
-                    extra: -m "ApexClass,LightningComponentBundle,FlexiPage,CustomTab,CustomApplication,Prompt"
+                    extra: -m "ApexClass,Pagelayout,LightningComponentBundle,FlexiPage,CustomTab,CustomApplication,Prompt"
             14: # data loading
                 task: load_learningOrgNavigationItems
 
