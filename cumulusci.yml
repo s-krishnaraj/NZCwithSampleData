@@ -8,11 +8,11 @@ project:
         default_branch: 'main'
     source_format: sfdx
 
-#orgs:
-#    scratch:
-#         nzc:
-#             config_file: config/project-scratch-def.json
-#             days: 30
+orgs:
+    scratch:
+         nzc:
+             config_file: config/project-scratch-def.json
+             days: 30
 
 tasks:
     robot:
@@ -106,7 +106,7 @@ tasks:
         options: 
             mapping: datasets/scope3procurement.yml
             sql_path: datasets/db_procurement.sql
-    load_learningOrgNaviagtionItems:
+    load_learningOrgNavigationItems:
         description: Loads DATA for Learning Org's in-app navigation
         class_path: cumulusci.tasks.bulkdata.LoadData
         group: nzcData
@@ -173,7 +173,7 @@ flows:
                 task: dx
                 options:
                     command: force:source:deploy
-                    extra: -m "LightningComponentBundle,FlexiPage,CustomTab,CustomApplication,Prompt"
+                    extra: -m "ApexClass,LightningComponentBundle,FlexiPage,CustomTab,CustomApplication,Prompt"
             14: # data loading
-                task: load_learningOrgNaviagtionItems
+                task: load_learningOrgNavigationItems
 
