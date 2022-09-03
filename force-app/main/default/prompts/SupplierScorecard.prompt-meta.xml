@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>SupplierScorecard</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>Back to Learning Path</actionButtonLabel>
+        <actionButtonLink>/lightning/n/Scope3_Procurement_Analysis</actionButtonLink>
+        <body>&lt;ol&gt;&lt;li&gt;&lt;strong&gt;Science Based Target Status :&lt;/strong&gt; If the supplier has set an SBT, they can indicate their SBT status, such as Planning, Target Set, Committed, or Declined.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Supplier Emissions Reduction Commitment Type&lt;/strong&gt;: The supplier may have set an emissions reduction commitment type based on their vision, such as 1.5° Celsius, 2° Celsius etc.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Scope 1 Emissions (tCO₂e) : &lt;/strong&gt;The total/apportioned scope 1 emissions value&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Scope 2 Location-Based Emissions (tCO₂e): &lt;/strong&gt;The scope 2 emissions value calculated based on the location-based data of grid emissions&lt;/li&gt;&lt;li&gt;&lt;strong style=&quot;color: rgb(30, 30, 28);&quot;&gt;Supplier-Provided Emissions Type &lt;/strong&gt;&lt;span style=&quot;color: rgb(30, 30, 28);&quot;&gt;: &lt;/span&gt;The type of emissions data provided by the supplier.&amp;nbsp;It could be one of: &lt;/li&gt;&lt;/ol&gt;&lt;ul&gt;&lt;li&gt;&lt;strong&gt;Supplier-Allocated Emissions&lt;/strong&gt;: Used when the supplier’s scope 1, 2, or 3 emissions value is the final allocated value.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Total Supplier Emissions&lt;/strong&gt;: Used when the supplier’s total corporate GHG emissions is the data provided by the supplier.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;</body>
+        <customApplication>standard__IndustriesSustainability</customApplication>
+        <delayDays>1</delayDays>
+        <displayType>DockedComposer</displayType>
+        <header>Supplier Sustainability Scorecards</header>
+        <isPublished>true</isPublished>
+        <masterLabel>SupplierScorecard</masterLabel>
+        <publishedDate>2022-09-02</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2022-09-03</startDate>
+        <targetPageKey1>SustainabilityScorecard</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <timesToDisplay>10</timesToDisplay>
+        <title>Key info provided by Suppliers</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

@@ -1,0 +1,16 @@
+Navigation Item:
+  sf_object: Navigation_Item__c
+  fields:
+    - Filter_Criteria__c
+    - Icon_Name__c
+    - isActive__c
+    - NavigationType__c
+    - ObjectName__c
+    - PageName__c
+    - RelatedEntityAPIName__c
+    - Section_Detail__c
+    - Section_Heading__c
+    - Sequence_Number__c
+    - Target_App__c
+    - Target_Tab_Name__c
+    - Target_RecordId__c

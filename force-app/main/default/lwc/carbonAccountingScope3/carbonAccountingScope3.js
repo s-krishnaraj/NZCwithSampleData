@@ -5,7 +5,7 @@ import getNavigationItems from '@salesforce/apex/GetItems.getPageItems';
 export default class CarbonAccounting extends LightningElement {
     @api app_description = " Manage Scope 3 Carbon Accounting";
    
-    @api app_welcome_text = "Explore about Scope 3 Carbon Accounting, including Waste-related & Prcourement-related Emissions";
+    @api app_welcome_text = "Explore about Scope 3 Carbon Accounting, including Waste-related Emissions";
 
     page_Name = 'Scope3 Carbon Accounting';
     object_Name = 'ElectricityEmssnFctrSet';

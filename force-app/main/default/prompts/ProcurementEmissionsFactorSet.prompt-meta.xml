@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Prompt xmlns="http://soap.sforce.com/2006/04/metadata">
+    <masterLabel>ProcurementEmissionsFactorSet</masterLabel>
+    <promptVersions>
+        <actionButtonLabel>Back to Learning Path</actionButtonLabel>
+        <actionButtonLink>/lightning/n/Scope3_Procurement_Analysis</actionButtonLink>
+        <body>&lt;p&gt;&lt;span style=&quot;color: rgb(30, 30, 30);&quot;&gt;Procurement Emissions Factor Sets are the reference data used to &lt;/span&gt;&lt;em style=&quot;color: rgb(30, 30, 30);&quot;&gt;compute emissions from spending amounts. &lt;/em&gt;&lt;span style=&quot;color: rgb(30, 30, 30);&quot;&gt;These datasets are derived from econometric models run in a particular calendar year for a particular currency.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot;color: rgb(30, 30, 30);&quot;&gt;Many &lt;/span&gt;&lt;strong style=&quot;color: rgb(30, 30, 30);&quot;&gt;Procurement Emissions Factor Set Item &lt;/strong&gt;&lt;span style=&quot;color: rgb(30, 30, 30);&quot;&gt;records are associated with a parent Procurement Emissions Factor Set record. Each Procurement Item record for a specific GHG category is associated with a Procurement Item record for the same category.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p&gt;In the &lt;strong&gt;Related&lt;/strong&gt; tab, you will see the &lt;strong style=&quot;color: rgb(30, 30, 30);&quot;&gt;Procurement Emissions Factor Set Item &lt;/strong&gt;&lt;span style=&quot;color: rgb(30, 30, 30);&quot;&gt;records associated to this parent record&lt;/span&gt;&lt;/p&gt;</body>
+        <customApplication>standard__IndustriesSustainability</customApplication>
+        <delayDays>1</delayDays>
+        <displayType>DockedComposer</displayType>
+        <header>Procurement Emissions Factor Set</header>
+        <isPublished>true</isPublished>
+        <masterLabel>ProcurementEmissionsFactorSet</masterLabel>
+        <publishedDate>2022-09-02</publishedDate>
+        <shouldDisplayActionButton>true</shouldDisplayActionButton>
+        <shouldIgnoreGlobalDelay>true</shouldIgnoreGlobalDelay>
+        <startDate>2022-09-02</startDate>
+        <targetPageKey1>PcmtEmssnFctrSet</targetPageKey1>
+        <targetPageKey2>view</targetPageKey2>
+        <targetPageType>standard__recordPage</targetPageType>
+        <timesToDisplay>10</timesToDisplay>
+        <title>Key details</title>
+        <userAccess>Everyone</userAccess>
+        <userProfileAccess>Everyone</userProfileAccess>
+        <versionNumber>1</versionNumber>
+    </promptVersions>
+</Prompt>

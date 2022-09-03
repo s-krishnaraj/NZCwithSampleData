@@ -72,6 +72,7 @@ export default class FeatureChild extends NavigationMixin(LightningElement) {
                     appTarget: this.app
                 }
             }
+            this.linkInNewTab = true;
         } else if (this.linkReference == "standard__recordPage") {
             console.debug("Open Record Page By Id");
             this.pageReference = {
@@ -137,7 +138,7 @@ export default class FeatureChild extends NavigationMixin(LightningElement) {
             this.linkInNewTab = true;
         }
 
-        console.debug("Link In New Tab :", this.linkInNewTab);
+        console.log("Link In New Tab :", this.linkInNewTab);
 
         if (this.linkInNewTab) {
             this[NavigationMixin.GenerateUrl](this.pageReference)

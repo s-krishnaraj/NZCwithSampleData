@@ -106,6 +106,14 @@ tasks:
         options: 
             mapping: datasets/scope3procurement.yml
             sql_path: datasets/db_procurement.sql
+    load_learningOrgNaviagtionItems:
+        description: Loads DATA for Learning Org's in-app navigation
+        class_path: cumulusci.tasks.bulkdata.LoadData
+        group: nzcData
+        options: 
+            mapping: datasets/learningOrgSetup.yml
+            sql_path: datasets/learningOrgSetup.sql
+
 flows:
     extract_record_type:
         group: data
@@ -166,4 +174,6 @@ flows:
                 options:
                     command: force:source:deploy
                     extra: -m "LightningComponentBundle,FlexiPage,CustomTab,CustomApplication,Prompt"
+            14: # data loading
+                task: load_learningOrgNaviagtionItems
 
