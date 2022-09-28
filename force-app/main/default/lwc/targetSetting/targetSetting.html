@@ -1,0 +1,36 @@
+<template>
+    <lightning-card footer="" title="">
+        <h1 class="slds-text-heading_medium">{app_welcome_text}</h1> 
+       
+        <div class="c-footer" >
+            <a href="/lightning/n/Home">Return to Learning Home</a>
+        </div>
+        
+        <div class="c-container"> 
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <p class="c-description">{app_description}</p>
+ 
+                    <template if:true={targetSettingItems.data}>
+                        <template for:each={targetSettingItems.data} for:item="targetSettingItem">
+                            <c-feature-child
+                                key={targetSettingItem.Id}
+                                heading={targetSettingItem.Section_Heading__c} 
+                                image={targetSettingItem.Icon_Name__c}
+                                app-text={targetSettingItem.Section_Detail__c}
+                                app={targetSettingItem.Target_App__c}
+                                page={targetSettingItem.Target_Tab_Name__c}
+                                link-in-new-tab={pass_false}
+                                link-reference={targetSettingItem.NavigationType__c}
+                                object-name={targetSettingItem.ObjectName__c}
+                                object-id={targetSettingItem.Target_RecordId__c}
+                                related-entity={targetSettingItem.RelatedEntityAPIName__c}
+                                >
+                            </c-feature-child>
+                        </template>
+                    </template>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>
