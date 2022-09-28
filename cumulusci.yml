@@ -164,16 +164,16 @@ flows:
                 task: load_waste
             12: #data loading
                 task: load_scope3
-            12: 
+            13: 
                 task: dx
                 options:
                     command: force:source:deploy
                     extra: -m "WaveApplication,WaveDataset,WaveXmd,WaveDataFlow:NZC_2_0_Net_Zero_Analytics_Users, WaveRecipe:NZC_2_0_Net_Zero_Analytics_Users,WaveDataFlow:NZC_2_0_Net_Zero_Analytics_Part1, WaveRecipe:NZC_2_0_Net_Zero_Analytics_Part1,WaveDataFlow:NZC_2_0_Net_Zero_Analytics_Part2, WaveRecipe:NZC_2_0_Net_Zero_Analytics_Part2"
-            13:
+            14:
                 task: dx
                 options:
                     command: force:source:deploy
                     extra: -m "ApexClass,Pagelayout,LightningComponentBundle,FlexiPage,CustomTab,CustomApplication,Prompt"
-            14: # data loading
+            15: # data loading
                 task: load_learningOrgNavigationItems
 
